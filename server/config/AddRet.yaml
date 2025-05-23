@@ -1,0 +1,32 @@
+
+#model
+n_layers: 2
+n_heads: 2
+embedding_size: 128
+hidden_size: 512
+dropout_prob: 0.5
+hidden_act: 'gelu'
+layer_norm_eps: 1e-12
+bidirectional: True
+plm_size: 1024
+n_exps: 8
+adaptor_layers: [1024,128]
+adaptor_dropout_prob: 0.2
+
+#data
+max_his_len: 20
+n_items: 25612
+#n_items: 3668
+device: 'cuda'
+
+
+#recall
+flag_model_path: 'XXXXXXX/bge-large-en-v1.5'
+id2meta_path: 'XXXXXXX/Video_Games/Retrieval/meta.json'
+weight_path: './server/model_ckpts/Video_Games/add.pth'
+history_path: 'XXXXXXX/Video_Games/Retrieval/'
+
+#id2meta_path: 'XXXXXXX/ML-1M/Retrieval/meta.json'
+#weight_path: './server/model_ckpts/ML-1M/add.pth'
+#history_path: 'XXXXXXX//ML-1M/Retrieval/'
+

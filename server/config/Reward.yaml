@@ -1,0 +1,41 @@
+
+#Game
+data_file_path: "XXXXXXX/Video_Games/RL/train_w_meta.jsonl"
+tokenizer_name_or_path: "XXXXX/Qwen2.5-7B/"
+flag_model_path: 'XXXXX/bge-large-en-v1.5'
+id2meta_path: 'XXXXX/Video_Games/Retrieval/meta.json'
+text_emb_path: 'XXXXXX/Video_Games/Retrieval/Video_Games.meta.embeddings.npy'
+item_emb_path: 'XXXXX/Video_Games/Retrieval/Video_Games.embeddings.npy'
+
+
+#ML-1M
+#data_file_path: "XXXXXX/ML-1M/RL/train_category.jsonl"
+#tokenizer_name_or_path: "XXXXX/Qwen2.5-7B/"
+#flag_model_path: 'XXXXX/bge-large-en-v1.5'
+#id2meta_path: 'XXXXXX/ML-1M/Retrieval/meta.json'
+#text_emb_path: 'XXXXX/ML-1M/Retrieval/ML-1M.meta.embeddings.npy'
+#item_emb_path: 'XXXXXXX/ML-1M/Retrieval/ML-1M.embeddings.npy'
+
+
+
+device: 'cuda'
+
+log_dir: "./log/reward"
+log_file: "reward.log"
+topk: 10
+item_split_identifier: "\n"
+
+
+
+format_error: -1
+outcome_error: 0
+outcome_correct: 1
+outcome_linear: 0.2
+recall_num_base: 0.5
+recall_num_max: 3
+diversity_base: 0.2
+sim_reward_base: 10
+
+
+stage: "cold" # "cold" or "rec"
+
