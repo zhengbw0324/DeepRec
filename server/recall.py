@@ -15,12 +15,12 @@ logger = init_logger(__name__)
 def parse_args():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("--model_name", type=str, required=True)
-    parser.add_argument("--model_config_file_path", type=str, required=True)
+    parser.add_argument("--model_name", type=str, default="AddRet")
+    parser.add_argument("--model_config_file_path", type=str, default="./server/config/AddRet.yaml")
     parser.add_argument("--ctr_model_config_file_path", type=str, default=None)
 
     parser.add_argument("--host", type=str, default="0.0.0.0", help="IP for the server")
-    parser.add_argument("--port", type=int, default=5003, help="Port number for the server")
+    parser.add_argument("--port", type=int, default=6001, help="Port number for the server")
 
 
     return parser.parse_known_args()

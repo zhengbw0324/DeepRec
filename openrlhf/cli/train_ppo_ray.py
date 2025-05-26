@@ -180,13 +180,12 @@ def train(args):
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     # recommendation
-    parser.add_argument("--rec_topk", type=int, default=50)
+    parser.add_argument("--rec_topk", type=int, default=10)
     parser.add_argument("--recall_server", type=str, required=True)
-    parser.add_argument("--recall_topk", type=int, default=50)
-    parser.add_argument("--recall_shuffle", type=float, default=0.0)
+    parser.add_argument("--recall_topk", type=int, default=20)
     parser.add_argument("--filtered_idx_file", type=str, default=None)
     parser.add_argument("--filtered_idx_key", type=str, default=None)
-    parser.add_argument("--max_global_steps", type=int, default=100)
+    parser.add_argument("--max_global_steps", type=int, default=80)
 
     # Ray and vLLM
     parser.add_argument("--ref_num_nodes", type=int, default=1, help="number of nodes for reference")

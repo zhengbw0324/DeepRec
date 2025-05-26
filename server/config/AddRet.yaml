@@ -15,18 +15,20 @@ adaptor_dropout_prob: 0.2
 
 #data
 max_his_len: 20
+#Game
 n_items: 25612
+#ML-1M
 #n_items: 3668
 device: 'cuda'
 
 
 #recall
-flag_model_path: 'XXXXXXX/bge-large-en-v1.5'
-id2meta_path: 'XXXXXXX/Video_Games/Retrieval/meta.json'
-weight_path: './server/model_ckpts/Video_Games/add.pth'
-history_path: 'XXXXXXX/Video_Games/Retrieval/'
+flag_model_path: 'BAAI/bge-large-en-v1.5'
+id2meta_path: './data/dataset/Video_Games/Retrieval/meta.json'
+weight_path: './server/model_ckpts/Video_Games.pth'
+history_path: './data/dataset/Video_Games/Retrieval/'
 
-#id2meta_path: 'XXXXXXX/ML-1M/Retrieval/meta.json'
-#weight_path: './server/model_ckpts/ML-1M/add.pth'
-#history_path: 'XXXXXXX//ML-1M/Retrieval/'
+#id2meta_path: './data/dataset/ML-1M/Retrieval/meta.json'
+#weight_path: './server/model_ckpts/ML-1M.pth'
+#history_path: './data/dataset/ML-1M/Retrieval/'
 

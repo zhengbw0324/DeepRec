@@ -1,7 +1,7 @@
 name=$1
 
-model=XXXXXXXX
-config=Qwen2.5-7B_path
+model=./results/ckpts/${name}/_actor
+config=Qwen/Qwen2.5-7B
 
 
 set -x

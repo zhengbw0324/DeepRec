@@ -1251,9 +1251,6 @@ class RemoteExperienceMaker(NaiveExperienceMaker):
                         item_list = result["item_list"]
                         for k in range(len(item_list)):
                             recall_items = item_list[k]
-                            if args.recall_shuffle > 0:
-                                if random.random() < args.recall_shuffle:
-                                    random.shuffle(recall_items)
 
                             continued_text_now = copy.deepcopy(continued_texts[k])
                             if len(recall_items)>0:

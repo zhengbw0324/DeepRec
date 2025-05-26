@@ -13,24 +13,24 @@ wandb_group=RecTeam
 wandb_project=DeepRec
 
 
+cold_start_ckpt=$1
 
-reward_port=XXXX
-filter_data="top0_100"
-cold_start_ckpt=XXXXXXXX
 
-data=game
+data_name=Video_Games
 TBS=512
 RBS=128
 N_SAMPLES=8
 LR=1e-6
 stage=2
 max_steps=80
-recall_port=XXXXXX
+reward_port=5002
+recall_port=6001
 SERVER_IP=XXXXXX
 rec_k=10
 recall_k=20
+filter_data="top0_100"
 
-run_name=${data}_recall${recall_k}_${filter_data}_${TBS}_${RBS}x${N_SAMPLES}_stage${stage}_${max_steps}
+run_name=${data_name}_recall${recall_k}_${filter_data}_${TBS}_${RBS}x${N_SAMPLES}_stage${stage}_${max_steps}
 echo "========================================================================="
 echo "run_name: $run_name"
 echo "========================================================================="
@@ -39,9 +39,9 @@ RM_SERVER=http://${SERVER_IP}:${reward_port}/reward
 RECALL_SERVER=http://${SERVER_IP}:${recall_port}/recall
 IDX_KEY=${filter_data}_stage${stage}
 
-DATA_PATH=XXXXXXX.jsonl
+DATA_PATH=./data/dataset/${data_name}/RL/train.jsonl
 BASE_PATH=./results/ckpts/${cold_start_ckpt}/_actor/checkpoint_step20
-IDX_FILE=XXXXXXXX/combine_idx_two_stage.json
+IDX_FILE=./data/dataset/${data_name}/RL/data_idx_two_stage.json
 LOG_BASE=log
 SAVE_MODEL_NAME=${run_name}
 RES_DI=./results/
